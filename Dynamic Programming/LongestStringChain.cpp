@@ -36,7 +36,7 @@ int longestStringChain(vector<string> & words ) {
 }
 
 
-int longestStrinChainTable ( vector<string>& words ) {
+int longestStringChainTable ( vector<string>& words ) {
     sort ( words.begin() , words.end() ,[](const auto& a , const auto&b) { 
         return a.length() > b.length() ; 
     } )  ;
@@ -62,7 +62,7 @@ int longestStrinChainTable ( vector<string>& words ) {
 int main() {
 
     vector<string> words = {"a", "b", "ba", "bca", "bda", "bdca"};
-    int result = longestStrinChainTable(words);
+    int result = longestStringChain(words);
     assert(result == 4 && "Test case failedddd"); // "a" -> "ba" -> "bda" -> "bdca"
     std::cout << "Singular test case passed!" << endl;
     
