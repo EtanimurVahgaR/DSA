@@ -14,19 +14,23 @@ bool isPred ( string& child , string& parent ) {
     }
     return ( i == child.size() ) ; 
 }
-int longestEndingWithCurr ( vector<string>& words , string curr) {
+int longestEndingWithCurr ( vector<string>& words , string curr , unordered_map<string ,int>& memo) {
     int count = 1; 
+    if ( memo.find(curr) != memo.end() ) return memo[curr] ; 
     for ( string& w : words) { 
         if ( isPred(w, curr) ) { 
-            count = max ( count , 1 + longestEndingWithCurr(words , w)) ; 
+            count = max ( count , 1 + longestEndingWithCurr(words , w , memo)) ; 
         }
     }
+    memo[curr] = count ; 
     return count ; 
 }
 int longestStringChain(vector<string> & words ) { 
     int res = 1 ;
+    int n = words.size() ; 
+    unordered_map<string,int> memo  ; 
     for ( auto word : words ) { 
-        res = max ( res , longestEndingWithCurr(words, word)) ;
+        res = max ( res , longestEndingWithCurr(words, word, memo) ) ;
     }
     return res ;
 }
