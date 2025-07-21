@@ -58,11 +58,34 @@ int longestStringChainTable ( vector<string>& words ) {
 }
 
 
+int longestStringChainHash ( vector<string>& words ) {
+    sort ( words.begin() , words.end() ,[](const auto& a , const auto&b) { 
+        return a.length() < b.length() ; 
+    } )  ;
+
+    int n = words.size() ;
+    unordered_map<string,int> dp ; 
+    int res = 1; 
+
+    for ( int i = 0 ; i < n ; i ++ ) { 
+        dp[words[i]] = 1 ;
+        for ( int j = 0 ; j < words[i].size() ; j++ ) { 
+            string pred = words[i].substr(0 , j) + words[i].substr(j + 1) ; 
+            if ( dp.find(pred) != dp.end() ) { 
+                dp[words[i]] = max ( dp[words[i]] , dp[pred] + 1) ; 
+            }        
+        }
+        res = max(res , dp[words[i]]) ; 
+    }
+    return res;
+}
+
 
 int main() {
-
     vector<string> words = {"a", "b", "ba", "bca", "bda", "bdca"};
-    int result = longestStringChain(words);
+    int result = longestStringChainHash(words);
+    cout<< "result : "<<result << endl; 
+
     assert(result == 4 && "Test case failedddd"); // "a" -> "ba" -> "bda" -> "bdca"
     std::cout << "Singular test case passed!" << endl;
     
