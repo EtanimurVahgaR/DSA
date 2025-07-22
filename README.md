@@ -4,7 +4,7 @@
 
 | Week                  | Sun      | Mon       | Tue     | Wed | Thu | Fri | Sat |
 | --------------------- | -------- | --------- | ------- | --- | --- | --- | --- |
-| **July 20-26**        | 20✅     | 21✅      | 22      | 23  | 24  | 25  | 26  |
+| **July 20-26**        | 20✅     | 21✅      | 22✅    | 23  | 24  | 25  | 26  |
 | **July 27 - July 31** | 27       | 28        | 29      | 30  | 31  |     |     |
 |                       | **JULY** | **MONTH** | **END** |     |     |     |     |
 | **Aug 1-2**           |          |           |         |     |     | 1   | 2   |
@@ -22,3 +22,8 @@
 |                       | **SEPT** | **MONTH** | **END** |     |     |     |     |
 
 ### TODOS
+
+1. Binary search of longest increasing subsequence
+2. Problems regarding :
+   - Longest increasing subsequence ( LIS )
+   - Longest common subsequence ( LCS )
