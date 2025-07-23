@@ -24,6 +24,7 @@
 ### TODOS
 
 1. Binary search of longest increasing subsequence
-2. Problems regarding :
+2. Palindrome
+3. Problems regarding :
    - Longest increasing subsequence ( LIS )
    - Longest common subsequence ( LCS )
