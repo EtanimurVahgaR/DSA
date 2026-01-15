@@ -1,1 +1,2 @@
-using namespace std;
+seRobber_r(nums, i + 1 ) )  ; 
+}

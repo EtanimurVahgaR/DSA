@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
 
 #define pb push_back
@@ -13,7 +15,7 @@ bool helperWithoutMemo(vector<int> &arr , int target , int i ) {
     if ( i > n ) return false ;
     if ( target == 0 ) return true ;     
     bool pick = false ; 
-    if (i < n-1 ) pick = helperWithoutMemo ( arr , target - arr[i] , i + 1 ,)   ; 
+    if (i < n-1 ) pick = helperWithoutMemo ( arr , target - arr[i] , i + 1 )   ; 
     int notPick = helperWithoutMemo( arr , target , i + 1 ) ; 
     if ( pick || notPick ) return true; 
     return false ;
